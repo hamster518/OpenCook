@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from mainapp.views import get_index, get_signup
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^signup', get_signup),
+    url(r'^', get_index)
 ]
