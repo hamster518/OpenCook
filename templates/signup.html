@@ -1,72 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>OpenCook</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">OpenCook</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success">登入</button>
-                    <a href="/signup">
-                        <button type="button" class="btn btn-primary">註冊</button>
-                    </a>
-                </form>
-            </div>
-            <!--/.navbar-collapse -->
-        </div>
-    </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <!-- Example row of columns -->
-        <h1>註冊</h1>
+{% extends 'default/base.html' %} {% block content %}
+</nav>
+<div class="container main-container">
+    <!-- Example row of columns -->
+    <h1>註冊帳號</h1>
+    <form>
         <label>請輸入使用者名稱</label>
         <input class="form-control" type="" name="">
         <label>請輸入使用者mail</label>
         <input class="form-control" type="" name="">
         <label>請輸入密碼</label>
         <input class="form-control" type="" name="">
-        <button class="btn btn-primary btn-block" >提交送出</button>
         <hr>
-        <footer>
-            <p>&copy; 2016 Company, Inc.</p>
-        </footer>
-    </div>
-    <!-- /container -->
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    </script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
-
-</html>
+        <button class="btn btn-primary btn-block">提交送出</button>
+    </form>
+</div>
+<!-- /container -->
+{% endblock %}
