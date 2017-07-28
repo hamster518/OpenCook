@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from mainapp.views import get_index, get_signup, post_signup, post_login, post_logout
+from recipe.views import get_recipes_api
 
 
 urlpatterns = [
@@ -24,5 +25,6 @@ urlpatterns = [
     url(r'^signup/post$', post_signup),
     url(r'^login/post$', post_login),
     url(r'^logout/post$', post_logout),
+    url(r'^api/recipes$', get_recipes_api),
     url(r'^', get_index)
 ]
