@@ -1,5 +1,8 @@
 {% extends 'default/base.html' %} {% block content %}
 <div class="jumbotron">
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
     <div class="container">
         <h1>分享料理美好時刻</h1>
         <p>在這裡你可以分享你的私房食譜給喜愛料理的朋友們</p>
@@ -17,10 +20,11 @@
 var xhr = new XMLHttpRequest();
 var onloadHandle = function() {
     var data = JSON.parse(JSON.parse(xhr.responseText).data);
+    console.log(data);
     var result = document.getElementById('result');
     var strHTML = '';
-    data.forEach(function(value){
-        strHTML += '<div class="col-md-4"><h4>' + value.fields.title + '</h4><a href="#" class="thumbnail">' + '<img src="' + value.fields.image_path + '">' + '</a></div>'
+    data.forEach(function(value) {
+        strHTML += '<div class="col-md-4"><h4>' + value.fields.title + '</h4><a href="/recipes/' + value.pk + '" class="thumbnail">' + '<img src="' + value.fields.image_path + '">' + '</a></div>'
     });
 
     result.innerHTML = strHTML;

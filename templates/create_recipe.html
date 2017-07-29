@@ -1,0 +1,18 @@
+{% extends 'default/base.html' %} {% block content %}
+<div class="container main-container">
+    <!-- Example row of columns -->
+    <h1>分享食譜</h1>
+    <form action="/recipes/create/post" method="POST">
+        <label>請輸入食譜名稱</label>
+        <h2 class="form-signin-heading">分享食譜</h2>
+        <label for="title">食譜名稱</label>
+        <input type="text" id="title" class="form-control" placeholder="請輸入食譜名稱" name="title" required autofocus>
+        <label for="image_path">食譜圖片</label>
+        <input type="text" id="image_path" class="form-control" placeholder="請輸入食譜圖片位置" name="image_path" required>
+        <label for="description">食譜描述</label>
+        <textarea type="text" id="description" class="form-control" placeholder="請輸入食譜描述" name="description" required></textarea>
+        <hr> {% csrf_token %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">馬上分享</button>
+    </form>
+</div>
+{% endblock %}
